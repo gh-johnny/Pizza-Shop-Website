@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -15,7 +16,20 @@ export function SignIn() {
 
   async function handleSignIn(data: TSignInSchema) {
     await new Promise((resolve) => setTimeout(resolve, 2000))
-    console.log(data)
+    try {
+      console.log(data)
+      toast.success('A link was sent to your e-mail.', {
+        action: {
+          label: 'Resend',
+          onClick: () => handleSignIn(data),
+        },
+      })
+    } catch (err) {
+      console.error('submit sign-in error: ' + err)
+      toast.error(
+        'We were unable to sent the link to your e-mail. Please try again.',
+      )
+    }
   }
 
   return (

@@ -18,7 +18,6 @@ export function SignIn() {
   async function handleSignIn(data: TSignInSchema) {
     await new Promise((resolve) => setTimeout(resolve, 2000))
     try {
-      console.log(data)
       toast.success('A link was sent to your e-mail.', {
         action: {
           label: 'Resend',

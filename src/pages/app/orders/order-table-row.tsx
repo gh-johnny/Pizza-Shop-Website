@@ -40,7 +40,7 @@ export default function OrderTableRow() {
 
         <TableCell className='font-medium'>$ 114.96</TableCell>
 
-        <TableCell className='text-green-500 dark:text-green-400'>
+        <TableCell className='text-emerald-500 dark:text-emerald-400'>
           <Button variant='outline' size='xs'>
             <ArrowRight className='h-3 w-3 mr-2 ' />
             Approve

@@ -30,7 +30,7 @@ export default function Orders() {
                   <TableHead className='w-[180px]'>Ordered at</TableHead>
                   <TableHead className='w-[140px]'>Status</TableHead>
                   <TableHead>Client</TableHead>
-                  <TableHead className='w-[140px]'>Amount</TableHead>
+                  <TableHead className='w-[140px]'>Total Amount</TableHead>
                   <TableHead className='w-[164px]'></TableHead>
                   <TableHead className='w-[132px]'></TableHead>
                 </TableRow>

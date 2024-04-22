@@ -5,16 +5,20 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from '@/components/ui/hover-card'
+import { useSessionStorage } from '@/hooks/useSessionStorage'
 
 export default function SignAsGuest() {
+  const { setItem } = useSessionStorage('is_guest')
   return (
     <div className='flex'>
       <HoverCard openDelay={0}>
         <HoverCardTrigger
           asChild
-          className='animate-pulse border-b-2 mx-auto hover:cursor-pointer hover:opacity-75'
+          className='animate-pulse border-b-2 mx-auto cursor-pointer hover:opacity-75'
         >
-          <Link to='/'>Sign in as Guest!</Link>
+          <Link to='/' onClick={() => setItem(true)}>
+            Sign in as Guest!
+          </Link>
         </HoverCardTrigger>
         <HoverCardContent>
           <h3 className='mb-2 font-bold'>🚀 Sign in as a Guest!</h3>

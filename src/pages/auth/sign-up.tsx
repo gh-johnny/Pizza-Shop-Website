@@ -10,6 +10,8 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { TSignUpSchema } from '@/schemas/signUpSchema'
 
+import SignAsGuest from './sign-as-guest'
+
 export function SignUp() {
   const navigate = useNavigate()
 
@@ -98,6 +100,7 @@ export function SignUp() {
               </a>
               .
             </p>
+            <SignAsGuest />
           </form>
         </div>
       </div>

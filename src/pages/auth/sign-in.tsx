@@ -10,6 +10,8 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { TSignInSchema } from '@/schemas/signInSchema'
 
+import SignAsGuest from './sign-as-guest'
+
 export function SignIn() {
   const [searchParams] = useSearchParams()
 
@@ -19,7 +21,7 @@ export function SignIn() {
     formState: { isSubmitting },
   } = useForm<TSignInSchema>({
     defaultValues: {
-      email: searchParams.get('email') ?? '',
+      email: searchParams.get('email') ?? 'agnellopizzeria@email.com',
     },
   })
 
@@ -72,10 +74,16 @@ export function SignIn() {
               <Input id='email' type='email' {...register('email')} />
             </div>
 
-            <Button disabled={isSubmitting} className='w-full' type='submit'>
+            <Button
+              disabled={isSubmitting}
+              className='text-black w-full dark:text-white '
+              type='submit'
+            >
               Access
             </Button>
           </form>
+
+          <SignAsGuest />
         </div>
       </div>
     </>
